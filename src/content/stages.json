@@ -1,0 +1,153 @@
+{
+  "stages": [
+    {
+      "id": "land_prep",
+      "name": "Land Preparation",
+      "environment": "baren",
+      "choices": [
+        {
+          "id": "deep_tilling",
+          "name": "Deep Tilling",
+          "cost": 500,
+          "baseDeltas": { "PI": 5, "SI": -5, "SH": -20, "WT": 0, "BD": -5 }
+        },
+        {
+          "id": "no_till",
+          "name": "No-Till Farming",
+          "cost": 0,
+          "baseDeltas": { "PI": -2, "SI": 8, "SH": 25, "WT": 5, "BD": 5 }
+        },
+        {
+          "id": "soil_test",
+          "name": "Take Soil Test",
+          "cost": 200,
+          "baseDeltas": { "PI": 0, "SI": 0, "SH": 0, "WT": 0, "BD": 0 }
+        }
+      ]
+    },
+    {
+      "id": "cropping",
+      "name": "Cropping System",
+      "environment": "sprouts",
+      "choices": [
+        {
+          "id": "monoculture",
+          "name": "Monoculture",
+          "cost": 1000,
+          "baseDeltas": { "PI": 15, "SI": -10, "BD": -25, "SH": -5 }
+        },
+        {
+          "id": "polyculture",
+          "name": "Polyculture",
+          "cost": 1500,
+          "baseDeltas": { "PI": 5, "SI": 15, "BD": 20, "SH": 5 }
+        },
+        {
+          "id": "crop_rotation",
+          "name": "Crop Rotation",
+          "cost": 500,
+          "baseDeltas": { "PI": 0, "SI": 5, "SH": 15, "BD": 10 }
+        }
+      ]
+    },
+    {
+      "id": "fertilizer",
+      "name": "Nutrient Management",
+      "environment": "growing",
+      "choices": [
+        {
+          "id": "synthetic_npk",
+          "name": "Synthetic NPK",
+          "cost": 2000,
+          "baseDeltas": { "PI": 20, "SI": -15, "SH": -20, "WT": -10 }
+        },
+        {
+          "id": "organic_compost",
+          "name": "Organic Compost",
+          "cost": 500,
+          "baseDeltas": { "PI": 5, "SI": 10, "SH": 15, "WT": 5 },
+          "modifiers": [
+            {
+              "condition": { "type": "history", "choiceId": "no_till" },
+              "effect": { "PI": 5 }
+            },
+            {
+              "condition": { "type": "history", "choiceId": "crop_rotation" },
+              "effect": { "SI": 5 }
+            }
+          ]
+        },
+        {
+          "id": "precision_app",
+          "name": "Precision Application",
+          "cost": 3000,
+          "baseDeltas": { "PI": 8, "SI": 12, "SH": 5, "WT": 0 },
+          "requirements": { "history": ["soil_test"] }
+        }
+      ]
+    },
+    {
+      "id": "irrigation",
+      "name": "Irrigation System",
+      "environment": "tall",
+      "choices": [
+        {
+          "id": "flood_irrigation",
+          "name": "Flood Irrigation",
+          "cost": 500,
+          "baseDeltas": { "PI": 10, "SI": -15, "WT": -25 },
+          "modifiers": [
+            {
+              "condition": { "type": "history", "choiceId": "deep_tilling" },
+              "effect": { "SI": -15 }
+            }
+          ]
+        },
+        {
+          "id": "drip_irrigation",
+          "name": "Drip Irrigation",
+          "cost": 5000,
+          "baseDeltas": { "PI": 5, "SI": 10, "WT": 10 },
+          "modifiers": [
+            {
+              "condition": { "type": "stat", "stat": "SH", "operator": ">=", "value": 60 },
+              "effect": { "PI": 5 }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "harvest",
+      "name": "Harvest",
+      "environment": "golden",
+      "choices": [
+        {
+          "id": "machine_harvest",
+          "name": "Machine Harvest",
+          "cost": 1000,
+          "baseDeltas": { "PI": 15, "SI": -5, "SH": -5 },
+          "modifiers": [
+            {
+              "condition": { "type": "history", "choiceId": "synthetic_npk" },
+              "effect": { "PI": -5 }
+            }
+          ]
+        },
+        {
+          "id": "crop_waste_composting",
+          "name": "Crop Waste Composting",
+          "cost": 500,
+          "baseDeltas": { "PI": -5, "SI": 10, "SH": 10 },
+          "requirements": { "history": ["organic_compost"] },
+          "modifiers": [
+            {
+              "condition": { "type": "history", "choiceId": "organic_compost" },
+              "effect": { "SI": 15 }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

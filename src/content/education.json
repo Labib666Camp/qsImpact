@@ -1,0 +1,76 @@
+{
+  "choices": {
+    "deep_tilling": {
+      "pre": "Deep tilling loosens soil for easy planting but disrupts soil structure.",
+      "post": "Tilling breaks up soil aggregates, leading to erosion and destroying the microbiome.",
+      "realWorldAnchor": "Intensive tilling can reduce soil organic carbon by up to 30% over 10 years."
+    },
+    "no_till": {
+      "pre": "Leaving soil undisturbed preserves organic matter and soil structure.",
+      "post": "Soil health increased. You preserved the fungal networks that help roots absorb nutrients.",
+      "realWorldAnchor": "No-till farming can increase soil carbon sequestration by 0.3 tons per acre annually."
+    },
+    "soil_test": {
+      "pre": "Testing soil reveals exact nutrient deficiencies before planting.",
+      "post": "You learned your exact soil needs. This unlocks precision application in the fertilizer stage.",
+      "realWorldAnchor": "Soil testing prevents over-application, reducing fertilizer costs by 15-20% on average."
+    },
+    "monoculture": {
+      "pre": "Growing one crop maximizes harvest efficiency but creates vulnerability.",
+      "post": "Biodiversity dropped. You created a perfect feast for a single type of pest.",
+      "realWorldAnchor": "Monocultures often require 2-3x more pesticide use than polyculture systems."
+    },
+    "polyculture": {
+      "pre": "Growing multiple crops together creates natural synergies.",
+      "post": "Biodiversity increased. Natural predators are now managing your pest population.",
+      "realWorldAnchor": "Intercropping can increase overall yield stability by up to 20% compared to monocultures."
+    },
+    "crop_rotation": {
+      "pre": "Alternating crops breaks pest cycles and balances nutrient uptake.",
+      "post": "Soil health improved. Different root depths are breaking up compacted soil layers.",
+      "realWorldAnchor": "Rotating crops can increase subsequent corn yields by 10-15% compared to continuous planting."
+    },
+    "synthetic_npk": {
+      "pre": "Synthetic fertilizers deliver nutrients fast but break down soil microbiomes over time.",
+      "post": "High yield locked in, but soil biology took a hit. Watch out for compaction.",
+      "realWorldAnchor": "Real farms using synthetic NPK produce ~30% more yield but see 40% more soil erosion over 10 years."
+    },
+    "organic_compost": {
+      "pre": "Compost releases nutrients slowly and feeds the soil food web.",
+      "post": "Microbiome is thriving. Yields won't peak immediately, but the soil will hold water better.",
+      "realWorldAnchor": "Adding organic compost can increase soil water-holding capacity by up to 10,000 gallons per acre."
+    },
+    "precision_app": {
+      "pre": "Applying exact nutrients based on soil mapping.",
+      "post": "You gave the plants exactly what they needed and nothing more.",
+      "realWorldAnchor": "Precision agriculture technologies can reduce fertilizer runoff by up to 50%."
+    },
+    "flood_irrigation": {
+      "pre": "Flooding the field is simple but wastes massive amounts of water.",
+      "post": "Water table dropped visibly. Much of the water evaporated before reaching roots.",
+      "realWorldAnchor": "Flood irrigation is only about 40-50% efficient, losing the rest to evaporation and runoff."
+    },
+    "drip_irrigation": {
+      "pre": "Delivers water directly to the root zone, maximizing efficiency.",
+      "post": "Water table preserved. If your soil is healthy, plants will thrive.",
+      "realWorldAnchor": "Drip irrigation systems can achieve 90% water use efficiency."
+    },
+    "machine_harvest": {
+      "pre": "Fast, high-efficiency mechanical harvest.",
+      "post": "Harvest complete. Heavy machinery caused some soil compaction.",
+      "realWorldAnchor": "Heavy tractor traffic can compact soil up to 2 feet deep, reducing future root growth."
+    },
+    "crop_waste_composting": {
+      "pre": "Incorporating harvest residue back into the soil system.",
+      "post": "You returned significant organic matter to the field. Sustainability maximized.",
+      "realWorldAnchor": "Leaving crop residue on the field decreases wind and water erosion by up to 60%."
+    }
+  },
+  "stageTransitions": {
+    "1": "The land is prepared. The choices you made for the soil foundation will cascade into the growing season.",
+    "2": "Seeds are in the ground. Pests are watching your layout.",
+    "3": "Plants are feeding. Nutrients are moving through the soil profile...",
+    "4": "Water is flowing. The aquifer level changes based on your delivery method.",
+    "5": "The season is over. The farm report awaits."
+  }
+}

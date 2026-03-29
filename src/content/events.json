@@ -1,0 +1,55 @@
+{
+  "events": [
+    {
+      "id": "pest_outbreak",
+      "name": "Pest Outbreak!",
+      "description": "Low biodiversity means no natural predators. Monocultures are 3× more vulnerable to pests.",
+      "conditions": [
+        { "type": "stat", "stat": "BD", "operator": "<", "value": 30 }
+      ],
+      "chance": 0.4,
+      "effects": { "PI": -15 }
+    },
+    {
+      "id": "drought",
+      "name": "Drought Conditions",
+      "description": "Water table depletion from flood irrigation reduces groundwater availability.",
+      "conditions": [
+        { "type": "stat", "stat": "WT", "operator": "<", "value": 35 }
+      ],
+      "chance": 0.5,
+      "effects": { "PI": -10 }
+    },
+    {
+      "id": "soil_erosion",
+      "name": "Soil Erosion",
+      "description": "Degraded soil absorbs less water and nutrients. Next stage PI deltas reduced by 10%.",
+      "conditions": [
+        { "type": "stat", "stat": "SH", "operator": "<", "value": 25 }
+      ],
+      "chance": 0.3,
+      "effects": { "PI": -5 }
+    },
+    {
+      "id": "beneficial_insects",
+      "name": "Beneficial Insects Array",
+      "description": "High biodiversity attracts pollinators. Pollinator presence increases crop yield by up to 24%.",
+      "conditions": [
+        { "type": "stat", "stat": "BD", "operator": ">", "value": 70 }
+      ],
+      "chance": 0.6,
+      "effects": { "PI": 8 }
+    },
+    {
+      "id": "carbon_credit",
+      "name": "Carbon Credit Awarded",
+      "description": "Farms with verified sustainable practices are eligible for carbon offset programs.",
+      "conditions": [
+        { "type": "stat", "stat": "SI", "operator": ">", "value": 75 },
+        { "type": "stage", "operator": "==", "value": 3 }
+      ],
+      "chance": 1.0,
+      "effects": { "SI": 5 }
+    }
+  ]
+}
