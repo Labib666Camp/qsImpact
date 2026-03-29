@@ -37,11 +37,11 @@ export const ConsequencePanel = ({ choiceName, deltas, education, onNext }) => {
   else impactText = "Hidden stats neutral"
 
   return (
-    <div className="fixed inset-y-0 left-0 z-50 flex flex-col justify-start p-6 pt-[480px] pointer-events-none w-full max-w-sm sm:max-w-md xl:max-w-lg">
+    <div className="absolute top-24 right-4 sm:right-8 z-[70] flex flex-col justify-start pointer-events-none w-64 sm:w-[350px] md:w-[400px]">
       <motion.div
-        initial={{ opacity: 0, x: -50 }}
+        initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
-        className="bg-white/95 backdrop-blur-md text-gray-900 rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.4)] p-6 sm:p-8 w-full max-h-[45vh] overflow-y-auto pointer-events-auto border border-white/20"
+        className="bg-white/95 backdrop-blur-md text-gray-900 rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.4)] p-6 sm:p-8 w-full max-h-[80vh] overflow-y-auto pointer-events-auto border border-white/20"
       >
         <div className="flex flex-col">
           <div className="flex justify-between items-center mb-4 sm:mb-6">
